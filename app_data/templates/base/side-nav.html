@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+
+<div class="sidebar">
+    <ul>
+      {% if update %}
+      <li><a href="{% url 'your_vid' %}"><span class="material-symbols-outlined">
+        arrow_back
+        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Channel Videos</a></li>
+
+      {% endif %}
+
+      {% if users %}
+      <li><a href="{% url 'user_home' %}"><img src="{% static 'assets/home.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</a></li>
+      {% else %}
+      <li><a href="{% url 'Utube' %}"><img src="{% static 'assets/home.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</a></li>
+      {% endif %}
+      <li><a href="#"> <img src="{% static 'assets/shorts.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shorts</a></li>
+      <li><a href="#"><img src="{% static 'assets/subscription.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Subscriptions</a></li>
+      <hr style="background-color: white;">
+      <li><a href="#"><img src="{% static 'assets/library.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Library</a></li>
+      <li><a href="#"><img src="{% static 'assets/history.png' %}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; History</a></li>
+      {% if users %}
+      <li><a href="your_vid"><img src="{% static 'assets/your videos.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Videos</a></li>
+      <li><a href="#"><img src="{% static 'assets/watch later.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Watch Later</a></li>
+      {% endif %}
+      <hr style="background-color: white;">
+      <h5 style="color: aliceblue; padding-left: 15px;">Explore</h5>
+      <li><a href="#"><img src="{% static 'assets/trending.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trending</a></li>
+      <li><a href="category?category=music"><img src="{% static 'assets/music.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Music</a></li>
+      <li><a href="#"><img src="{% static 'assets/live.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Live</a></li>
+      <li><a href="category?category=gaming"><img src="{% static 'assets/gaming.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gaming</a></li>
+      <li><a href="category?category=sports"><img src="{% static 'assets/sport.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sports</a></li>
+      <li><a href="category?category=education"><img src="{% static 'assets/learning.png' %}" sty alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learning</a></li>
+      <hr style="background-color: white;">
+      <h5 style="color: aliceblue; padding-left: 15px;">More from YouTube</h5>
+      <li><a href="#">Youtube Premium</a></li>
+      <li><a href="#">Youtube Music</a></li>
+      <li><a href="#">Youtube Kids</a></li>
+      <hr style="background-color: white;">
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Report History</a></li>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Send feedback</a></li>
+      <br><br>
+
+
+ 
+    </ul>
+  </div>
+
+  {% endblock content %}

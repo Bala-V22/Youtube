@@ -1,0 +1,91 @@
+{% include 'base/nav.html' %}
+<!-- {% block content %} -->
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+     ::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+   
+ ::-webkit-scrollbar-thumb {
+    background:gray; 
+    border-radius: 50px;
+    height: 20px;
+  }
+  
+ ::-webkit-scrollbar-track {
+    background:rgb(15, 15, 15); 
+  }
+  </style>
+</head>
+<div class="base">
+<div class="conts">
+{% for i in value %}
+<div class="embed-responsive embed-responsive-26by9"  >
+    <iframe src="{{i.url}}" class="embed-responsive-item" title="YouTube video" style="width: 850; height: 490;" ></iframe>
+  </div>
+  <div class="ashok" style="width: 850;">
+  <div class="tile" style="color: white; padding-top: 12px;">
+    <h5>{{i.title}}</h5>
+  </div>
+  
+  {% for j in video_user %}
+  <div class="user-imp" > 
+    <div class="users-list">
+      <img src="{{j.profile}}" alt="" >
+    <h6>{{j.name}}</h6>
+    <button class="btn btn-primary" style="border-radius: 50px; background-color: rgb(255, 253, 253); height: 40px; color: black; border: none;"> Subscribe </button>
+    <div class="btn_bot">
+      
+      <div class="input-group">
+        <span class="input-group-text" style="background-color:rgb(65,64,64); border-radius: 50px 0 0 50px; border: none;"><span class="material-symbols-outlined">thumb_up</span></span>
+        <span class="input-group-text" style="background-color: rgb(65,64,64); border-radius: 0 50px 50px 0; border: none;"><span class="material-symbols-outlined">
+          thumb_down
+          </span></span>
+       
+      </div>
+      
+    
+    <!-- </div> -->
+    <button class="input-group-text" style="background-color: rgb(65,64,64); border-radius: 50px; border: none;"><i style="font-size:24px;" class="fa">&#xf064;</i>&nbsp;&nbsp; Share</button>
+ 
+    </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="des">
+    <p>{{i.description}}</p>
+  </div>
+  {% endfor %} 
+  {% endfor %} 
+ 
+</div>
+<div class="side-video">
+  <div class="vid_cad">
+  {% for n in other %}
+  <div class="vid">
+  <img src="{{n.image}}" alt="" width="180px" height="110px" onclick="transferValue('{{n.image}}')">
+  <div class="til_name">
+  <p> {{n.title}} <br><br>
+  {{n.name}}</p>
+</div>
+</div>
+
+  {% endfor %}
+</div>
+</div>
+</div>
+
+<script>
+  function transferValue(value) {
+    window.location.href = "video-play?value=" + encodeURIComponent(value);
+  }
+</script>
+<!-- {% endblock content %} -->

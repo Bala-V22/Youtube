@@ -1,0 +1,98 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+
+  .btn:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+    .dropdown-item{
+        color: white;
+    }
+
+    .dropdown-item:hover{
+        background-color: rgb(13,110,253);
+        color: white;
+    }
+
+    .col-md-5, .col-md-6:hover{
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<div class="cont">
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-md-10" >
+            
+            <div class="row" >
+            
+                {% for i in video %}
+                <div style="margin-bottom: 3%;" class="row">
+                <div class="col-md-5" onclick="transferValue('{{i.image}}')">
+                     <img src="{{i.image}}" class="image-fluid" alt="" width="350px" height="200px" style="margin-left: 2% ; border-radius: 10px;">
+                </div>
+                    <div class="col-md-6 mt-3" onclick="transferValue('{{i.image}}')">
+                        <p style="color: white; margin-bottom: 7%;">{{i.title}}</p>
+                        <img src="{{i.profile}}" alt="" width="35px" height="35px" style="border-radius: 50%;"><br><br>
+                        {% if i.video_in == "public" %}
+                        <span class="material-symbols-outlined" style="color: white;">
+                            public 
+                            </span>
+                        {% else %}
+                        <span class="material-symbols-outlined" style="color: white;">
+                            public_off
+                            </span>
+                        {% endif %}
+                    </div>
+                        <div class="col-md-1 mt-3">
+                            <div class="dropdown dropend">
+                            <button id="set" style="background-color: transparent; border: none;" class="btn dropdown" data-bs-toggle="dropdown"><span class="material-symbols-outlined " style="color: white;" >
+                                more_vert
+                                </span></button>
+
+                                    <ul  class="dropdown-menu" style="text-align: center; background-color: rgb(39, 39, 39);">
+                                        <li ><a href="video_edit?thumb={{i.image}}" class="dropdown-item" >Edit</a></li>
+                                        <li><a href="video_delete?thumb={{i.image}}" class="dropdown-item" >Delete</a></li>
+                                    </ul>
+                                <!-- </div> -->
+                            </div>
+                        </div>  
+                        </div>
+                        
+                 
+                    
+                <script>
+
+function show_set() {
+  var x = document.getElementById("opens");
+  if (x.style.visibility == "hidden") {
+    x.style.visibility = "visible";
+
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+                </script>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+
+function transferValue(value) {
+    window.location.href = "video-play?value=" + encodeURIComponent(value);
+  }
+</script>
+{% endblock content %}

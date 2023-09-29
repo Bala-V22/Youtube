@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" style="font-family: Roboto, Arial, sans-serif;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,0,0" />
+    
+    <title>Utube</title>
+    <style>
+    ::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+   
+ ::-webkit-scrollbar-thumb {
+    background:gray; 
+    border-radius: 50px;
+    height: 20px;
+  }
+  
+ ::-webkit-scrollbar-track {
+    background:rgb(15, 15, 15); 
+  }
+
+ 
+
+    </style>
+</head>
+<body>
+    {% include 'base/nav.html' %}
+    {% include 'base/side-nav.html' %}
+
+    {% block content %}  
+    {% endblock content %}
+    <!-- <center> -->
+        {% if message %}
+        <div class="message" id="mes" style="display: none;">
+        <div class="card" style=" background: rgb(65, 65, 65,0.7); border-radius: 50px;">
+            <p id="p" style="padding: 10px 15px; margin-bottom: 0; margin-left: 0;"></p></div>
+        </div>
+        {% endif %}
+    <!-- </center> -->
+   
+    <script>
+        $(document).ready(function() {
+        var message= "{{message}}";
+        var a = document.getElementById('p')
+        // var messageShown = localStorage.getItem('messageShown');
+
+        if(message){
+            a.textContent=message
+            $(".message").fadeIn();
+            // localStorage.setItem('messageShown', true);
+            setTimeout(function(){
+                $('.message').fadeOut();
+            }, 3000);
+        }
+    });
+
+    </script>
+</body>
+</html>

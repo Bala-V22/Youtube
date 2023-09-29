@@ -1,0 +1,147 @@
+.container {
+    width: 100%;
+    height: auto
+  }
+  
+  .box {
+    width: 80%;
+    height: 58px;
+    background-color: #fff;
+    margin: 20px auto;
+    box-shadow: 0 2px 33px rgba(0,0,0,.77)
+  }
+  
+  .search-bar {
+    width: 45%;
+    margin-left: 50px;
+    /* line-height: 56px; */
+    position: relative
+  }
+  
+  .se-in {
+    width: 101%;
+    height: 40px;
+    padding: 0 10px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(48,48,48);
+    border-radius: 50px 0px 0px 50px;
+    background-color: rgb(15, 15, 15);
+    z-index: 2
+  }
+  
+  .se-in:focus {
+    border: 1.1px solid #1c62b9;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+  }
+  
+  .se-btn {
+    position: absolute;
+    width: 11%;
+    height: 40px;
+    border: 1px solid rgb(48,48,48);
+    border-left: 0;
+    top: 0px;
+    right: -12%;
+    border-radius: 0px 50px 50px 0;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(34,34,34);
+    z-index: 1
+  }
+  
+  .se-btn i {
+    opacity: .5;
+    transition: all .07s ease-in-out
+  }
+  
+  .se-btn:hover i {
+    opacity: .95
+  }
+  
+  .se-btn:hover {
+    /* background-color: #E4E4E4; */
+    box-shadow: 0 1px 1px rgba(0,0,0,.15),
+      inset 0 0 2px rgba(0,0,0,.05);
+    transition: all .07s ease-in-out
+  }
+
+
+  .conts{
+    margin: 6% 33% 0 3%;
+  }
+
+  .tite{
+    color: white;
+  }
+
+  .user-imp{
+    color: white;
+    display: block;
+  }
+
+  .bg-light {
+    background-color: rgb(15, 15, 15)!important;
+  
+  }
+  
+  .user-box a{
+  text-decoration: none;
+  color: white;
+  }
+  
+  .user-box{
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 10%;
+        left: 81%;
+        visibility: hidden;
+        background-color: rgb(39,39,39);
+        z-index: 1500;
+       }
+  
+  .user-box ul{
+  list-style-type: none;
+  background-color: transparent;
+  margin-left: -12%;
+  }
+  
+  .user-box li{
+  padding: 10px 20px;
+  }
+  
+  .user-box li:hover {
+  background-color: #404040;
+  }
+  
+  .user-box li a:hover {
+  color: #ffffff;
+  }
+  
+  .user-box img{
+  border-radius: 50px;
+  margin: 20px;
+  }
+  .user-box p{
+  margin-top: 12%;
+  }
+  
+  .user-pro{
+    display: flex; 
+    flex-direction: row;
+    color: white;
+  }
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+
+
+
+  

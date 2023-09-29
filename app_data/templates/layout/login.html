@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'java script/main.js' %}">
+    <style>
+        /* .content_tab{
+            width: 450px;
+            height: 500px;
+            margin: 6% 0 0 35%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(45, 45, 45);
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgb(255, 255, 255,0.2);
+            border-radius: 10px;
+
+        }
+
+        .gamil, .pass span, label{
+            color: white;
+        }
+
+        .next{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content_tab .form-control:focus{
+            border-color:50% solid aqua;
+  box-shadow:0 0 0 0.25rem rgb(0, 255, 255,0,0.4) ; 
+        }
+
+    
+
+        .gmail{
+            position: absolute;
+            width: 78%;
+            height: 80%;
+        }
+
+        .pass{
+            position: absolute;
+            left: 110%;
+            width: 78%;
+            height: 80%;
+        } */
+    </style>
+</head>
+<body>
+<form action="log" method="POST">
+    {% csrf_token %}
+
+<div class="content_tab" >
+
+<div class="gmail" id="gmail">
+    <div class="ab" style="position: relative;">
+    <div class="mb-5">
+    <label for=""><span> Sign</span><br><span>to continue to UTube</span></label>
+</div>
+    <div class="mb-5">
+        <label for="" style="text-align: left; margin-right: 66%;">Enter Gmail ID</label><br>
+    {{form.gmail}}
+</div>
+<div class="mb-4">
+
+    </div>
+    <div class="mt-5">
+    <div class="next">
+    <a href="{% url 'Register' %}">Create a new user?</a>
+
+    <button type="button" class="btn btn-primary" style="margin-left: 30%; padding: 5px 20px; font-weight: bold;" onclick="move()">Next</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="pass" id="pass">
+    <div class="mb-5">
+    <label for=""><span> Sign</span><br><span>to continue to UTube</span></label>
+</div>
+    <div class="mb-2">
+        <label for="" style="text-align: left; margin-right: 66%;">Enter Password</label><br>
+    {{form.password}}
+</div>
+<div class="che" style="text-align: left; color: white;">
+<input type="checkbox" onclick="show(this)" id="onew" style="color: white; margin-right: 1%;"> Show password
+</div>
+
+<div class="mb-4">
+    </div>
+    <div class="mt-5">
+    <div class="next">
+    <a href="{% url 'Register' %}">Forget Password?</a>
+
+    <button type="submit" class="btn btn-primary" style="margin-left: 30%; padding: 5px 20px; font-weight: bold;">Next</button>
+</div>
+</div>
+
+</div>
+</div>
+</form>
+
+
+<script>
+    var x = document.getElementById('gmail')
+    var y = document.getElementById('pass')
+
+    function move(){
+        x.style.visibility='hidden';
+        y.style.left='10%';
+    }
+
+    var z = document.getElementById('show_pass')
+    function show(x){
+        if(x.checked==true)
+        {
+            z.type="text";
+        }
+        else
+        {
+            z.type="password";
+        }
+    }
+</script>
+</body>
+</html>

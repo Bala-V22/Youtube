@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .user-box a{
+        text-decoration: none;
+        color: white;
+       }
+
+       .user-box{
+        display: flex;
+        flex-direction: column;
+        /* padding: 10px; */
+        width: 200px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+       }
+
+       .user-box ul{
+        list-style-type: none;
+        padding: 0;
+       }
+
+       .user-box li{
+        padding: 10px 20px;
+       }
+
+       .user-box li:hover {
+    background-color: #404040;
+  }
+  
+  .user-box li a:hover {
+    color: #ffffff;
+  }
+
+  .user-box img{
+    border-radius: 50px;
+    padding: 20px 20px 0 20px;
+  }
+  .user-box p{
+    margin-top: 12%;
+  }
+    </style>
+</head>
+<body>
+   <div class="user-box" style=" background-color: rgb(39,39,39);">
+    <div class="user-pro" style="display: flex; flex-direction: row; color: white;">
+        <img src="20230526161518free_fire.jpg" alt="" width="40px" height="40px">
+        <p>bala</p>    
+    </div>
+    <ul>
+        <hr>
+        <li><a href="#">Your Profile</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>    
+   </div>
+</body>
+</html>

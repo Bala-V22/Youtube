@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    {% csrf_token %}
+
+
+<div class="cont">
+    <div class="container">
+        <div class="row">
+            {% for i in video %}
+                <div class="col-md-4" style="cursor: pointer;">
+                    <img src="{{ i.image }}" class="img-fluid" alt="{{ image.title }}" style="border-radius: 10px;" onclick="transferValue('{{i.image}}')">
+                    
+                    <div class="base" >
+                      <div class="logoo">
+                        <img src="{{i.profile}}" alt="" style="border-radius: 50px;">
+                      </div>
+                      <div class="til" style="padding-top: 10px; font-family: Roboto, Arial, sans-serif !important;">
+                        <p style="font-family: Roboto, Arial, sans-serif"> {{i.title}}</p><br>
+                        
+                      </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+
+
+function transferValue(value) {
+    window.location.href = "video-play?value=" + encodeURIComponent(value);
+  }
+
+</script>
+
+
+{% endblock content %}
