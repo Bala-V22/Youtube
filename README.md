@@ -1,7 +1,7 @@
 # Youtube
 
 <h4>
-I have created a platform similar to YouTube using Django for the backend, Python for server-side scripting, HTML, CSS, and JavaScript for the frontend, and SQLite for the database. I utilized Django models to create tables. This project was fully developed within one month.</h4><br>
+I have created a platform similar to YouTube using Django for the backend, Python for server-side scripting, HTML, CSS, and JavaScript for the frontend, and SQLite for the database. I utilized Django models to create tables. This project was fully developed within one month.</h4>
 
 <h5>Video</h5><br>
 
