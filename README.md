@@ -10,7 +10,7 @@ https://github.com/Bala-V22/Youtube/assets/134045414/cf96f289-67b0-44c2-ac18-b67
 
 <br>
 
-<h6>Project Screen Shot</h6>
+<h5>Project Screen Shot</h5>
 
 ![Screenshot 2023-09-29 105539](https://github.com/Bala-V22/Youtube/assets/134045414/731723d4-fd22-4673-8a96-46f29d8f8568) <br>
 
